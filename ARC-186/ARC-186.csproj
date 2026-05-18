@@ -17,4 +17,32 @@
       <Private>false</Private>
     </Reference>
   </ItemGroup>
+
+  <PropertyGroup>
+    <DistDir>dist</DistDir>
+    <DirToZip>$(DistDir)\zip</DirToZip>
+    <ModDir>$(DirToZip)\SPT\user\mods\Spys_$(MSBuildProjectName)</ModDir>
+  </PropertyGroup>
+
+  <Target Name="BuildDist" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <OutputDLL Include="$(TargetPath)"/>
+      <ResourceFiles Include="Resources\**\*.*"/>
+    </ItemGroup>
+
+    <RemoveDir Directories="$(DistDir)"/>
+    <Copy
+        SourceFiles="@(OutputDLL);@(ResourceFiles)"
+        DestinationFolder="$(ModDir)\%(RecursiveDir)"/>
+  </Target>
+  <Target Name="CopyPDB" AfterTargets="BuildDist" Condition="'$(Configuration)' == 'Debug'">
+    <Copy
+        SourceFiles="$(TargetDir)$(TargetName).pdb"
+        DestinationFolder="$(ModDir)"/>
+  </Target>
+  <Target Name="Zip" AfterTargets="BuildDist" Condition="'$(Configuration)' == 'Release'">
+    <ZipDirectory
+        SourceDirectory="$(DirToZip)"
+        DestinationFile="$(DistDir)\Spys_$(MSBuildProjectName)-$(Version).zip"/>
+  </Target>
 </Project>
