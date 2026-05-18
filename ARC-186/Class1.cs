@@ -43,8 +43,8 @@ public class Arc186ItemService(CustomItemService customItemService) : IOnLoad
                 Description = "Airborne SINCGARS will provide jam-resistant, secure VHF/FM/AM communications in the cockpit. This enables interoperable communications with the Army's SINCGARS systems during close air support missions.",
 
                 Width = 2,
-                Height = 1,
-                Weight = 0.25,
+                Height = 2,
+                Weight = 3.18,
                 BackgroundColor = "violet",
 
                 Prefab = new Prefab
