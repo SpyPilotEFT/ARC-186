@@ -25,7 +25,7 @@ public record ModMetadata : AbstractModMetadata
     public override string ModGuid { get; init; } = "com.arc186.customitem";
     public override string Name { get; init; } = "ARC-186";
     public override string Author { get; init; } = "SpyPilot";
-    public override SemanticVersioning.Version Version { get; init; } = new("1.0.4");
+    public override SemanticVersioning.Version Version { get; init; } = new("1.0.3");
     public override Range SptVersion { get; init; } = new("~4.0.13");
     public override bool? IsBundleMod { get; init; } = true;
     public override string License { get; init; } = "MIT";
