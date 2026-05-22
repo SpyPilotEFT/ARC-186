@@ -1,16 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <LangVersion>latest</LangVersion>
-        <Version>1.0.0</Version>
-        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="SPTarkov.Server.Core" Version="4.0.13" PrivateAssets="all" />
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <Version>1.0.0</Version>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SPTarkov.Server.Core" Version="4.0.13" PrivateAssets="all" />
+    <PackageReference Include="SPTarkov.Reflection" Version="4.0.13" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WTT-ServerCommonLib">
+      <HintPath>C:\SPT\SPT\user\mods\WTT-ServerCommonLib\WTT-ServerCommonLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
 </Project>
